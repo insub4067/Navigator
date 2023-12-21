@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "panmodal",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MightyCombine/PanModal.git",
+      "state" : {
+        "revision" : "fc476cf65c1b12b950d49810a972dc16f1eeffe1",
+        "version" : "1.2.8"
+      }
+    }
+  ],
+  "version" : 2
+}
