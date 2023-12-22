@@ -5,7 +5,8 @@ import SwiftUI
 
 public class Navigator {
     
-    public let navigationController: UINavigationController
+    let navigationController: UINavigationController
+    public var view: UINavigationController { navigationController }
     
     weak var parent: Navigator?
     var child: Navigator?
