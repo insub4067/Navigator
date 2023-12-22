@@ -1,11 +1,12 @@
 # 🗺️ Navigator
 
-> You can you SwiftUI View with UINavigationController very easily with UIKit based Project.
+> Enhance your UIKit-based project with the power of SwiftUI navigation. This guide provides a comprehensive example of how to integrate SwiftUI views for various navigation scenarios, including push, modal presentation, bottom sheets, alerts, and action sheets. By leveraging SwiftUI's simplicity and UIKit's robustness, you can create a seamless and dynamic user experience.
 
+## ✔️ Example Usage
 
-## ✔️ Example
-
-### Config and Start
+### Setting Up and Starting the Navigator
+Configure your `SceneDelegate` to initialize and display your SwiftUI view using a custom `Navigator` class.   
+This setup ensures that your SwiftUI view is properly embedded within the UIKit environment.
 ```swift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,8 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigator.start { ContentView() }
 
         /*
-        if inject Navigator
-        
+        Optional: Inject Navigator into your ViewModel
         navigator.start {
           let viewModel = ContentViewModel(navigator: navigator)
           return ContentView(viewModel: viewModel)
@@ -35,7 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 ```
 
-### Push
+### Navigating with Push
+Easily navigate to a new view using the `push` method.   
+This method adds the destination view to the navigation stack.
 ```swift
 var navigator: Navigator?
 navigator.push {
@@ -43,7 +45,8 @@ navigator.push {
 }
 ```
 
-### Present
+### Presenting Modally
+Use the `present` method to display a view modally over the current context.
 ```swift
 var navigator: Navigator?
 navigator.present {
@@ -51,7 +54,8 @@ navigator.present {
 }
 ```
 
-### BottomSheet
+### Displaying a Bottom Sheet
+Invoke the `bottomSheet` method to present a view as a bottom sheet, a popular UI pattern in modern apps.
 ```swift
 var navigator: Navigator?
 navigator.bottomSheet {
@@ -59,7 +63,8 @@ navigator.bottomSheet {
 }
 ```
 
-### Alert
+### Showing Alerts
+Easily display alerts with customizable buttons and actions.
 ```swift
 var navigator: Navigator?
 let parameter = AlertParameter(
@@ -72,7 +77,8 @@ let parameter = AlertParameter(
 navigator.alert(parameter)
 ```
 
-### ActionSheet
+### Using Action Sheets
+Similar to alerts, action sheets can be displayed with various options.
 ```swift
 var navigator: Navigator?
 let parameter = AlertParameter(
