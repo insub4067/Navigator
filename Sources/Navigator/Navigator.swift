@@ -5,7 +5,7 @@ import SwiftUI
 
 public class Navigator {
     
-    let navigationController: UINavigationController
+    fileprivate let navigationController: UINavigationController
     public var view: UIViewController { navigationController }
     
     weak var parent: Navigator?
@@ -28,12 +28,34 @@ public class Navigator {
     public init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
     }
+    
+    public func start(_ builder: () -> some View) {
+        let view = builder().viewController()
+        self.navigationController.setViewControllers([view], animated: false)
+    }
 }
 
 public extension Navigator {
     
-    func start(_ builder: () -> some View) {
-        let view = builder().viewController()
-        self.navigationController.setViewControllers([view], animated: false)
+    func push(_ builder: () -> some View) {
+        let controller = builder().viewController()
+        self.navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func pop() {
+        self.navigationController.popViewController(animated: true)
+    }
+    
+    func popToRoot() {
+        self.navigationController.popToRootViewController(animated: true)
+    }
+    
+    func popTo(name: String) {
+        let controllers = self.navigationController.viewControllers
+        controllers.forEach {
+            if $0.identifier == name {
+                self.navigationController.popToViewController($0, animated: true)
+            }
+        }
     }
 }
