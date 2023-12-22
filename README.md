@@ -1,6 +1,6 @@
 # 🗺️ Navigator
 
-> Enhance your UIKit-based project with the power of SwiftUI navigation. This guide provides a comprehensive example of how to integrate SwiftUI views for various navigation scenarios, including push, modal presentation, bottom sheets, alerts, and action sheets. By leveraging SwiftUI's simplicity and UIKit's robustness, you can create a seamless and dynamic user experience.
+> Enhance your UIKit-based project with the power of SwiftUI. This guide provides a comprehensive example of how to integrate SwiftUI views for various navigation scenarios, including push, modal presentation, bottom sheets, alerts, and action sheets. By leveraging SwiftUI's simplicity and UIKit's robustness, you can create a seamless and dynamic user experience.
 
 ## ✔️ Example Usage
 
