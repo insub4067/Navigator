@@ -29,13 +29,13 @@ public class Navigator {
         self.navigationController = navigationController
     }
     
-    public func start(_ builder: () -> some View) {
+    @MainActor public func start(_ builder: () -> some View) {
         let view = builder().viewController()
         self.navigationController.setViewControllers([view], animated: false)
     }
 }
 
-public extension Navigator {
+@MainActor public extension Navigator {
     
     func push(_ builder: () -> some View) {
         let controller = builder().viewController()

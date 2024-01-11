@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public extension Navigator {
+@MainActor public extension Navigator {
     
     func present(_ builder: () -> some View) {
         let controller = builder().viewController()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension Navigator {
+@MainActor public extension Navigator {
     
     func alert(_ parameter: AlertParameter) {
         let alert = UIAlertController(

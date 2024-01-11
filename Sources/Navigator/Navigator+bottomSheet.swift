@@ -8,7 +8,7 @@
 import SwiftUI
 import PanModal
 
-public extension Navigator {
+@MainActor public extension Navigator {
 
     func bottomSheet(
         _ parameter: BottomSheetParameter = .init(),
