@@ -8,6 +8,10 @@
 import SwiftUI
 
 @MainActor public extension Navigator {
+
+    func present(_ viewController: UIViewController) {
+        self.latestController.present(viewController, animated: true)
+    }
     
     func present(_ builder: () -> some View) {
         let controller = builder().viewController()
